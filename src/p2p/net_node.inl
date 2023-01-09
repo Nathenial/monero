@@ -1880,9 +1880,9 @@ namespace nodetool
         if (!connect_to_seed(zone.first))
           continue;
       }
+      */
       one_succeeded = true;
     }
-*/
     return one_succeeded;
   }
   //-----------------------------------------------------------------------------------
