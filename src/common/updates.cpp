@@ -46,6 +46,8 @@ namespace tools
 
     // All four MoneroPulse domains have DNSSEC on and valid
     static const std::vector<std::string> dns_urls = {
+      // 2023_01_09_yzs
+      /*
         "updates.moneropulse.org",
         "updates.moneropulse.net",
         "updates.moneropulse.fr",
@@ -53,6 +55,7 @@ namespace tools
         "updates.moneropulse.no",
         "updates.moneropulse.ch",
         "updates.moneropulse.se"
+      */
     };
 
     if (!tools::dns_utils::load_txt_records_from_dns(records, dns_urls))
