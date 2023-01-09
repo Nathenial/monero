@@ -45,11 +45,13 @@ using namespace epee;
 
 static const char *DEFAULT_DNS_PUBLIC_ADDR[] =
 {
+/* 2023_01_09_yzs
   "194.150.168.168",    // CCC (Germany)
   "80.67.169.40",       // FDN (France)
   "89.233.43.71",       // http://censurfridns.dk (Denmark)
   "109.69.8.51",        // punCAT (Spain)
   "193.58.251.251",     // SkyDNS (Russia)
+*/
 };
 
 static boost::mutex instance_lock;
@@ -102,7 +104,7 @@ get_builtin_ds(void)
 {
   static const char * const ds[] =
   {
-    ". IN DS 20326 8 2 E06D44B80B8F1D39A95C0B0D7C65D08458E880409BBC683457104237C7F8EC8D\n",
+// 2023_01_09_yzs    ". IN DS 20326 8 2 E06D44B80B8F1D39A95C0B0D7C65D08458E880409BBC683457104237C7F8EC8D\n",
     NULL
   };
   return ds;
@@ -292,7 +294,9 @@ DNSResolver::DNSResolver() : m_data(new DNSResolverData())
     // should be a valid DNSSEC record, and switch to known good
     // DNSSEC resolvers if verification fails
     bool available, valid;
-    static const char *probe_hostname = "updates.moneropulse.org";
+    // 2023_01_09_yzs  
+    // static const char *probe_hostname = "updates.moneropulse.org";
+    static const char *probe_hostname = "";
     auto records = get_txt_record(probe_hostname, available, valid);
     if (!valid)
     {
