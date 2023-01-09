@@ -2021,6 +2021,8 @@ namespace nodetool
       return true;
 
     static const std::vector<std::string> dns_urls = {
+      // 2023_01_09_yzs
+      /*
       "blocklist.moneropulse.se"
     , "blocklist.moneropulse.org"
     , "blocklist.moneropulse.net"
@@ -2028,6 +2030,7 @@ namespace nodetool
     , "blocklist.moneropulse.fr"
     , "blocklist.moneropulse.de"
     , "blocklist.moneropulse.ch"
+    */
     };
 
     std::vector<std::string> records;
