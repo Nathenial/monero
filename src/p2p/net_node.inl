@@ -695,24 +695,30 @@ namespace nodetool
     std::set<std::string> full_addrs;
     if (m_nettype == cryptonote::TESTNET)
     {
+      // 2023_01_09_yzs
+      /*
       full_addrs.insert("212.83.175.67:28080");
       full_addrs.insert("212.83.172.165:28080");
       full_addrs.insert("176.9.0.187:28080");
       full_addrs.insert("88.99.173.38:28080");
       full_addrs.insert("51.79.173.165:28080");
+      */
     }
     else if (m_nettype == cryptonote::STAGENET)
     {
+      /*
       full_addrs.insert("162.210.173.150:38080");
       full_addrs.insert("176.9.0.187:38080");
       full_addrs.insert("88.99.173.38:38080");
       full_addrs.insert("51.79.173.165:38080");
+      */
     }
     else if (m_nettype == cryptonote::FAKECHAIN)
     {
     }
     else
     {
+      /*
       full_addrs.insert("212.83.175.67:18080");
       full_addrs.insert("212.83.172.165:18080");
       full_addrs.insert("176.9.0.187:18080");
@@ -723,6 +729,7 @@ namespace nodetool
       full_addrs.insert("66.85.74.134:18080");
       full_addrs.insert("88.99.173.38:18080");
       full_addrs.insert("51.79.173.165:18080");
+      */
     }
     return full_addrs;
   }
@@ -853,10 +860,13 @@ namespace nodetool
       if (m_nettype == cryptonote::MAINNET)
       {
         return {
+          // 2023_01_09_yzs
+          /*
           "xwvz3ekocr3dkyxfkmgm2hvbpzx2ysqmaxgter7znnqrhoicygkfswid.onion:18083",
           "4pixvbejrvihnkxmduo2agsnmc3rrulrqc7s3cbwwrep6h6hrzsibeqd.onion:18083",
           "zbjkbsxc5munw3qusl7j2hpcmikhqocdf4pqhnhtpzw5nt5jrmofptid.onion:18083",
           "qz43zul2x56jexzoqgkx2trzwcfnr6l3hbtfcfx54g4r3eahy3bssjyd.onion:18083",
+          */
         };
       }
       return {};
@@ -864,8 +874,11 @@ namespace nodetool
       if (m_nettype == cryptonote::MAINNET)
       {
         return {
+          // 2023_01_09_yzs
+          /*
           "s3l6ke4ed3df466khuebb4poienoingwof7oxtbo6j4n56sghe3a.b32.i2p:18080",
           "sel36x6fibfzujwvt4hf5gxolz6kd3jpvbjqg6o3ud2xtionyl2q.b32.i2p:18080"
+          */        
         };
       }
       return {};
@@ -1645,11 +1658,14 @@ namespace nodetool
         if (skipped)
           MDEBUG("Skipping " << skipped << " possible peers as they share a class B with existing peers");
       }
+      // 2023_01_09_yzs
+      /*
       if (filtered.empty())
       {
         MINFO("No available peer in " << (use_white_list ? "white" : "gray") << " list filtered by " << next_needed_pruning_stripe);
         return false;
       }
+      */
       if (use_white_list)
       {
         // if using the white list, we first pick in the set of peers we've already been using earlier
@@ -1856,7 +1872,8 @@ namespace nodetool
         }
         conn_count = new_conn_count;
       }
-
+// 2023_01_09_yzs
+      /*
       if (start_conn_count == get_outgoing_connections_count(zone.second) && start_conn_count < zone.second.m_config.m_net_config.max_out_connection_count)
       {
         MINFO("Failed to connect to any, trying seeds");
@@ -1865,7 +1882,7 @@ namespace nodetool
       }
       one_succeeded = true;
     }
-
+*/
     return one_succeeded;
   }
   //-----------------------------------------------------------------------------------
