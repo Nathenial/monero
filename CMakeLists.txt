@@ -348,7 +348,7 @@ if(BUILD_TAG)
 else()
   message(STATUS "Building without build tag")
 endif()
-/*
+#[[
 if(NOT MANUAL_SUBMODULES)
   find_package(Git)
   if(GIT_FOUND)
@@ -371,7 +371,7 @@ if(NOT MANUAL_SUBMODULES)
     check_submodule(external/supercop)
   endif()
 endif()
-*/
+]]
 set(CMAKE_C_FLAGS_RELEASE "-DNDEBUG ${OPT_FLAGS_RELEASE}")
 set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG ${OPT_FLAGS_RELEASE}")
 
