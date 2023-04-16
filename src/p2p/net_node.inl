@@ -1574,6 +1574,11 @@ namespace nodetool
             const epee::net_utils::network_address na = cntxt.m_remote_address;
             const uint32_t actual_ip = na.as<const epee::net_utils::ipv4_network_address>().ip();
             classB.insert(actual_ip & 0x0000ffff);
+            //yzs_2023_04_16
+            // 查看actual_ip
+            uint32_t classB_ip = actual_ip & 0x0000ffff;
+            std::cout << "Inserted IP: " << epee::string_tools::get_ip_string_from_int32(classB_ip) << std::endl;
+            
           }
           else if (cntxt.m_remote_address.get_type_id() == epee::net_utils::ipv6_network_address::get_type_id())
           {
